@@ -7,7 +7,7 @@ const Orders = async () => {
   const { userId } = auth();
   const orders = await getOrders(userId as string);
 
-  console.log(orders[0].products);
+  console.log("ORDERS", orders);
 
   return (
     <div className="px-10 py-5 max-sm:px-3">
@@ -62,11 +62,15 @@ const Orders = async () => {
                     )}
                     <p className="text-small-medium">
                       Unit price:{" "}
-                      <span className="text-small-bold">{orderItem.product.price}</span>
+                      <span className="text-small-bold">
+                        {orderItem.product.price}
+                      </span>
                     </p>
                     <p className="text-small-medium">
                       Quantity:{" "}
-                      <span className="text-small-bold">{orderItem.quantity}</span>
+                      <span className="text-small-bold">
+                        {orderItem.quantity}
+                      </span>
                     </p>
                   </div>
                 </div>
